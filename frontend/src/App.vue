@@ -1,16 +1,16 @@
 <template>
-  <Header />
+  <HeaderMenu />
   <router-view />
-  <Footer />
+  <FooterMenu />
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+import HeaderMenu from '@/components/HeaderMenu.vue';
+import FooterMenu from '@/components/FooterMenu.vue';
 export default {
   components: {
-    Header,
-    Footer,
+    HeaderMenu,
+    FooterMenu,
   },
 };
 </script>
