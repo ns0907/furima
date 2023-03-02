@@ -1,0 +1,19 @@
+  // breakpointの設定
+  $mq-breakpoints: (
+    xl: 1440px,
+    lg: 1280px,
+    md: 1024px,
+    tb: 768px,
+    sm: 576px,
+    xs: 414px,
+  ) !default;
+
+  // Media Queryの設定
+  @mixin mq($breakpoint: md, $rule: min) {
+    $breakpoint: map_get($mq-breakpoints, $breakpoint);
+
+    @media screen and (#{$rule}-width: $breakpoint) {
+      @content;
+    }
+  }
+

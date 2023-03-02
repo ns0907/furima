@@ -70,7 +70,7 @@
     aria-labelledby="basicModal"
     aria-hidden="true"
   >
-    <div class="modal-dialog" style="max-width: 75%;">
+    <div class="modal-dialog">
       <div class="modal-content p-3">
         <div class="modal-header border-0 mx-auto">
           <div class="modal-title text-center h3">ログイン</div>
@@ -113,6 +113,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/common/scss/_common.scss";
 #header {
   border-bottom: 2px solid lightgray;
 
@@ -183,6 +184,12 @@ export default {
 
   .square_btn::after {
     transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  @include mq(sm) {
+    .modal-dialog {
+      max-width: 65% !important;
+    }
   }
 }
 </style>
