@@ -12,13 +12,13 @@
       <div class="modal-content p-3">
         <div class="modal-header border-0">
           <div class="modal-title text-center h3">ログイン</div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
         <div class="modal-body">
-          <p>メールアドレス：<input type="text" class="form-control" /></p>
-          <p>パスワード：<input type="text" class="form-control" /></p>
+          <p>メールアドレス：<input type="text" class="form-control" v-model="email" /></p>
+          <p>パスワード：<input type="text" class="form-control" v-model="password" /></p>
         </div>
         <div class="modal-footer border-0">
           <button type="button" class="btn btn-primary w-100" @click="login">ログイン</button>
@@ -30,11 +30,14 @@
 
 <script>
 import { ref } from 'vue';
+import axios from 'axios';
 export default {
   name: 'LoginModalComponent',
   setup() {
     // data
     const showContent = ref(false);
+    const email = ref();
+    const password = ref();
 
     // methods
     const openModal = () => {
@@ -44,17 +47,32 @@ export default {
       showContent.value = false;
     };
 
+    const login = () => {
+      console.log(email.value + password.value);
+
+      axios.get('http://homestead.test/sanctum/csrf-cookie').then((response) => {
+        console.log(response)
+        axios
+          .post('http://homestead.test/api/login', {
+            email: email.value,
+            password: password.value,
+          })
+          .then((response) => console.log(response))
+          .catch((error) => console.log(error));
+      });
+    };
+
     // computed
 
     // lifecycle hooks
 
-    return { showContent, openModal, closeModal };
+    return { showContent, openModal, closeModal, login, email, password };
   },
 };
 </script>
 
 <style lang="scss">
-@import "@/assets/common/scss/_common.scss";
+@import '@/assets/common/scss/_common.scss';
 
 #overlay {
   /* 要素を重ねた時の順番 */
