@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import HeaderMenu from '@/components/HeaderMenu.vue';
-import FooterMenu from '@/components/FooterMenu.vue';
+import HeaderMenu from '@/components/modules/HeaderMenu.vue';
+import FooterMenu from '@/components/modules/FooterMenu.vue';
 export default {
   components: {
     HeaderMenu,

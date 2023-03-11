@@ -59,17 +59,16 @@
 </template>
 
 <script>
-import LoginModal from '@/components/LoginModal';
+import LoginModal from '@/components/modals/LoginModal';
 export default {
   name: 'HeaderMenuComponent',
-  components: {LoginModal},
-  setup() {
-  },
+  components: { LoginModal },
+  setup() {},
 };
 </script>
 
 <style lang="scss">
-@import "@/assets/common/scss/_common.scss";
+@import '@/assets/common/scss/_common.scss';
 #header {
   border-bottom: 2px solid lightgray;
 

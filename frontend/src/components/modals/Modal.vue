@@ -92,11 +92,11 @@ export default {
   justify-content: center;
 }
 
-#loginModal {
-  @include mq(sm) {
-    .modal-dialog {
-      max-width: 65% !important;
-    }
-  }
-}
+// #loginModal {
+//   @include mq(sm) {
+//     .modal-dialog {
+//       max-width: 65% !important;
+//     }
+//   }
+// }
 </style>
