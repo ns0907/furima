@@ -2,7 +2,7 @@
   <!-- ボタン・リンククリック後に表示される画面の内容 -->
   <div
     class="modal fade"
-    id="loginModal"
+    :id="propModalId"
     tabindex="-1"
     role="dialog"
     aria-labelledby="basicModal"
@@ -11,7 +11,7 @@
     <div class="modal-dialog">
       <div class="modal-content p-3">
         <div class="modal-header border-0">
-          <div class="modal-title text-center h3">ログイン</div>
+          <div class="modal-title text-center h3">{{ propTitle }}</div>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -21,7 +21,9 @@
           <p>パスワード：<input type="text" class="form-control" v-model="password" /></p>
         </div>
         <div class="modal-footer border-0">
-          <button type="button" class="btn btn-primary w-100" @click="login">ログイン</button>
+          <button type="button" class="btn btn-primary w-100" @click="buttonClickModal">
+            {{ propTitle }}
+          </button>
         </div>
       </div>
     </div>
@@ -30,43 +32,46 @@
 
 <script>
 import { ref } from 'vue';
-import axios from 'axios';
+import LoginHelper from '@/functions/LoginHelper';
+import RegistHelper from '@/functions/RegistHelper';
+// import axios from 'axios';
 export default {
-  name: 'LoginModalComponent',
-  setup() {
+  name: 'ModalComponent',
+  props: { modalId: { type: String }, title: { type: String } },
+  setup(props) {
     // data
     const showContent = ref(false);
+    const propModalId = ref(props.modalId);
+    const propTitle = ref(props.title);
     const email = ref();
     const password = ref();
 
     // methods
+    const { login } = LoginHelper();
+    const { regist } = RegistHelper();
+
     const openModal = () => {
       showContent.value = true;
     };
     const closeModal = () => {
       showContent.value = false;
     };
-
-    const login = () => {
-      console.log(email.value + password.value);
-
-      axios.get('http://homestead.test/sanctum/csrf-cookie').then((response) => {
-        console.log(response)
-        axios
-          .post('http://homestead.test/api/login', {
-            email: email.value,
-            password: password.value,
-          })
-          .then((response) => console.log(response))
-          .catch((error) => console.log(error));
-      });
+    const buttonClickModal = () => {
+      switch(propModalId.value) {
+        case 'loginModal':
+          login(email.value, password.value);
+          break;
+        case 'registModal':
+          regist(email.value, password.value);
+          break;
+      }
     };
 
     // computed
 
     // lifecycle hooks
 
-    return { showContent, openModal, closeModal, login, email, password };
+    return { showContent, openModal, closeModal, email, password, propModalId, propTitle, login, regist, buttonClickModal };
   },
 };
 </script>

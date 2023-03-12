@@ -26,7 +26,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">会員登録</a>
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#registModal">会員登録</a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a
@@ -56,13 +56,15 @@
     </nav>
   </header>
   <LoginModal></LoginModal>
+  <RegistModal></RegistModal>
 </template>
 
 <script>
 import LoginModal from '@/components/modals/LoginModal';
+import RegistModal from '@/components/modals/RegistModal';
 export default {
   name: 'HeaderMenuComponent',
-  components: { LoginModal },
+  components: { LoginModal, RegistModal},
   setup() {},
 };
 </script>
