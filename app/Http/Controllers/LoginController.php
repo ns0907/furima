@@ -27,11 +27,9 @@ class LoginController extends Controller
             return ['result'=> '1', "message"=> "ログインしました。"];
         } else {
             return [
+                'result'=> '0', 
                 "message"=> "メールアドレスまたはパスワードが一致していません。",
                 "errors"=> [
-                    "email"=> [
-                        "メールアドレスまたはパスワードが一致していません。"
-                    ]
                 ]
             ];
         }

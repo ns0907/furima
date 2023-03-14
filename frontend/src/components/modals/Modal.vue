@@ -17,6 +17,7 @@
           </button>
         </div>
         <div class="modal-body">
+          {{message}}
           <p>メールアドレス：<input type="text" class="form-control" v-model="email" /></p>
           <p>パスワード：<input type="text" class="form-control" v-model="password" /></p>
         </div>
@@ -45,6 +46,7 @@ export default {
     const propTitle = ref(props.title);
     const email = ref();
     const password = ref();
+    const message = ref('123');
 
     // methods
     const { login } = LoginHelper();
@@ -56,11 +58,15 @@ export default {
     const closeModal = () => {
       showContent.value = false;
     };
-    const buttonClickModal = () => {
+    const buttonClickModal = async () => {
       switch(propModalId.value) {
-        case 'loginModal':
-          login(email.value, password.value);
+        case 'loginModal': {
+          const m = await login(email.value, password.value);
+          
+          message.value = m.message;
+          console.log('message.ref:'+ m.message);
           break;
+        }
         case 'registModal':
           regist(email.value, password.value);
           break;
@@ -71,7 +77,7 @@ export default {
 
     // lifecycle hooks
 
-    return { showContent, openModal, closeModal, email, password, propModalId, propTitle, login, regist, buttonClickModal };
+    return { showContent, openModal, closeModal, email, password, propModalId, propTitle, login, regist, buttonClickModal, message };
   },
 };
 </script>
