@@ -28,6 +28,10 @@ Laravel9 バックエンド機能
 Vue3 フロントエンド機能（frontendディレクトリ配下）
 
 ## 動作マニュアル
+### Laravel
+Comming soon
+
+### Vue
 cd /frontend
 npm install
 npm run serve
