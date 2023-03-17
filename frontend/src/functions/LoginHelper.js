@@ -2,9 +2,9 @@ import axios from 'axios';
 
 export default function () {
   const login = async (email, password) => {
-    return await axios.get('http://homestead.test/sanctum/csrf-cookie').then(async () => {
+    return await axios.get(process.env.VUE_APP_SANCTUM_URL).then(async () => {
       return await axios
-        .post('http://homestead.test/api/login', {
+        .post(process.env.VUE_APP_API_URL + '/login', {
           email: email,
           password: password,
         })
