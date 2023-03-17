@@ -21,12 +21,17 @@
           </div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
+              <a class="nav-link" href="https://github.com/ns0907/furima/blob/main/README.md">Read me</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"
                 >ログイン</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#registModal">会員登録</a>
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#registModal"
+                >会員登録</a
+              >
             </li>
             <!-- <li class="nav-item dropdown">
               <a
@@ -64,7 +69,7 @@ import LoginModal from '@/components/modals/LoginModal';
 import RegistModal from '@/components/modals/RegistModal';
 export default {
   name: 'HeaderMenuComponent',
-  components: { LoginModal, RegistModal},
+  components: { LoginModal, RegistModal },
   setup() {},
 };
 </script>

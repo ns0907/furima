@@ -1,5 +1,5 @@
 # フリマアプリ「フリマル」
-ゲーム・PCなどのハード機器に特化したフリマアプリ
+ゲーム・PCなどのハード機器に特化したフリマアプリ　。。。にする予定です。
 
 ## 機能要件
 ### 基本機能
@@ -28,20 +28,10 @@ Laravel9 バックエンド機能
 Vue3 フロントエンド機能（frontendディレクトリ配下）
 
 ## 動作マニュアル
-### Laravel
-Comming soon
-
-### Vue
-cd /frontend
-npm install
-npm run serve
-
-  App running at:
-  - Local:   http://localhost:8080/
-  - Network: http://192.168.1.14:8080/
-
-<http://localhost:8080/> へアクセス
+<http://furimaru.s3-website-ap-northeast-1.amazonaws.com/> へアクセス
 
 【テストアカウント】
 メールアドレス：test1@test
 パスワード：test
+
+※会員登録を試す場合は、実際のメールアドレスでなく、ダミーアドレスを使用して下さい。

@@ -46,7 +46,7 @@ export default {
     const propTitle = ref(props.title);
     const email = ref();
     const password = ref();
-    const message = ref('123');
+    const message = ref('');
 
     // methods
     const { login } = LoginHelper();
