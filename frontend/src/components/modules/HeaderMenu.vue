@@ -34,7 +34,7 @@
                 v-if="!store.isLogin"
                 >ログイン</a
               >
-              <a class="nav-link" href="#" @click="logout" v-else
+              <a class="nav-link" href="#" @click="logout()" v-else
                 >ログアウト</a
               >
             </li>
@@ -83,13 +83,15 @@
 <script>
 import LoginModal from '@/components/modals/LoginModal';
 import RegistModal from '@/components/modals/RegistModal';
-import { loginStore } from '@/stores/login';
+import { loginStore } from '@/stores/loginStore';
+import LoginHelper from '@/functions/LoginHelper';
 export default {
   name: 'HeaderMenuComponent',
   components: { LoginModal, RegistModal },
   setup() {
     const store = loginStore();
-    return { store };
+    const {logout} = LoginHelper();
+    return { store, logout };
   },
 };
 </script>

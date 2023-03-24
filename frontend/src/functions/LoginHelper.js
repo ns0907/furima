@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { loginStore } from '@/stores/login';
+import { loginStore } from '@/stores/loginStore';
 
 export default function () {
   const store = loginStore();
@@ -30,5 +30,20 @@ export default function () {
     return message;
   };
 
-  return { login };
+  const logout = async () => {
+    let message;
+    await axios
+      .post(process.env.VUE_APP_API_URL + '/logout')
+      .then((response) => {
+        store.setLogin(0, '');
+        message = response.data;
+      })
+      .catch((error) => {
+        message = error.response.data;
+      });
+    console.log(message);
+    return message;
+  };
+
+  return { login, logout };
 }

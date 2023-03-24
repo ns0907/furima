@@ -9,7 +9,6 @@ class LoginController extends Controller
 {
     /**
      * 認証の試行を処理
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -37,5 +36,16 @@ class LoginController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do n ot match our records.',
         ])->onlyInput('email');
+    }
+
+    /**
+     * ログアウト
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return response()->json(true);
     }
 }

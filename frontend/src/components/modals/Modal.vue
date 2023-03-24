@@ -18,7 +18,6 @@
         </div>
         <div class="modal-body">
           {{message}}
-           <p>store.isLogin : {{ store.isLogin }}</p>
           <p>メールアドレス：<input type="text" class="form-control" v-model="email" /></p>
           <p>パスワード：<input type="text" class="form-control" v-model="password" /></p>
         </div>
@@ -36,7 +35,6 @@
 import { ref } from 'vue';
 import LoginHelper from '@/functions/LoginHelper';
 import RegistHelper from '@/functions/RegistHelper';
-import { loginStore } from '@/stores/login'
 // import axios from 'axios';
 export default {
   name: 'ModalComponent',
@@ -49,7 +47,6 @@ export default {
     const email = ref();
     const password = ref();
     const message = ref('');
-    const store = loginStore();
 
     // methods
     const { login } = LoginHelper();
@@ -80,7 +77,7 @@ export default {
 
     // lifecycle hooks
 
-    return { showContent, openModal, closeModal, email, password, propModalId, propTitle, login, regist, buttonClickModal, message, store };
+    return { showContent, openModal, closeModal, email, password, propModalId, propTitle, login, regist, buttonClickModal, message };
   },
 };
 </script>
