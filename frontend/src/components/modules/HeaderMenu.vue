@@ -21,17 +21,33 @@
           </div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="https://github.com/ns0907/furima/blob/main/README.md">Read me</a>
+              <a class="nav-link" href="https://github.com/ns0907/furima/blob/main/README.md"
+                >Read me</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#loginModal"
+                v-if="!store.isLogin"
                 >ログイン</a
               >
+              <a class="nav-link" href="#" @click="logout" v-else
+                >ログアウト</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#registModal"
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#registModal"
+                v-if="!store.isLogin"
                 >会員登録</a
               >
+              <a class="nav-link" href="mypage" v-else>マイページ</a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a
@@ -67,10 +83,14 @@
 <script>
 import LoginModal from '@/components/modals/LoginModal';
 import RegistModal from '@/components/modals/RegistModal';
+import { loginStore } from '@/stores/login';
 export default {
   name: 'HeaderMenuComponent',
   components: { LoginModal, RegistModal },
-  setup() {},
+  setup() {
+    const store = loginStore();
+    return { store };
+  },
 };
 </script>
 
