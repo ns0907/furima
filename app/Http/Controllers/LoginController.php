@@ -23,10 +23,10 @@ class LoginController extends Controller
             // $request->session()->regenerate();
 
             // return redirect()->intended('dashboard');
-            return ['result'=> '1', "message"=> "ログインしました。"];
+            return ['result'=> 1, "message"=> "ログインしました。"];
         } else {
             return [
-                'result'=> '0', 
+                'result'=> 0, 
                 "message"=> "メールアドレスまたはパスワードが一致していません。",
                 "errors"=> [
                 ]
