@@ -4,22 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Requests\UserCreateRequest;
 
 class UserController extends Controller
 {
     /**
      * ユーザ登録
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\UserCreateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function regist(Request $request)
+    public function regist(UserCreateRequest $request)
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-
         // DBインサート
         $user = new User([
             'name' => 1,
@@ -29,10 +25,11 @@ class UserController extends Controller
 
         // 作成
         if ($user->save()) {
-            return ['result' => '1', "message" => "会員登録しました。"];
+            return ['result' => 1, "message" => "会員登録しました。"];
         } else {
             return [
-                "message" => "会員登録失敗",
+                'result' => 0,
+                "message" => "会員登録に失敗しました",
                 "errors" => [
                     "email" => [
                         "会員登録失敗"

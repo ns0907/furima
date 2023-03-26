@@ -67,9 +67,12 @@ export default {
           console.log('message.ref:'+ m.message);
           break;
         }
-        case 'registModal':
-          regist(email.value, password.value);
+        case 'registModal': {
+          const m = await regist(email.value, password.value);
+          message.value = m.message;
+          console.log('message.ref:'+ m.message);
           break;
+        }
       }
     };
 
