@@ -41,7 +41,6 @@ export default function () {
       .catch((error) => {
         message = error.response.data;
       });
-    console.log(message);
     return message;
   };
 

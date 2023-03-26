@@ -3,15 +3,18 @@ import axios from 'axios';
 export default function () {
   const regist = async (email, password) => {
     let message = '';
-    await axios.get('http://homestead.test/sanctum/csrf-cookie').then(async (response) => {
-      console.log(response);
+    await axios.get(process.env.VUE_APP_SANCTUM_URL).then(async (response) => {
       await axios
-        .post('http://homestead.test/api/user/regist', {
+        .post(process.env.VUE_APP_API_URL + '/user/regist', {
           email: email,
           password: password,
         })
-        .then((response) => {message = response.data;})
-        .catch((error) => {message = error.response.data; console.log(error.response.data.message);});
+        .then((response) => {
+          message = response.data;
+        })
+        .catch((error) => {
+          message = error.response.data;
+        });
     });
 
     return message;
