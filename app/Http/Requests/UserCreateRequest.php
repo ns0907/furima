@@ -28,4 +28,11 @@ class UserCreateRequest extends FormRequest
             'password' => ['required'],
         ];
     }
+
+    /**
+     * バリデータが最初のルールの失敗で停​​止するかを指示
+     *
+     * @var bool
+     */
+    protected $stopOnFirstFailure = true;
 }
