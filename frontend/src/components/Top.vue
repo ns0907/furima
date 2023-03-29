@@ -1,95 +1,135 @@
 <template>
   <div class="item container-xl">
     <div class="item-row row mt-3 mb-3">
-      <div class="item-row-col item-row-col col-4">
+      <div class="item-row-col col-sm-3 col-4">
         <div class="card">
           <div class="square">
             <img src="@/assets/img/img01.jpg" class="card-img-top" />
           </div>
           <div class="card-body d-none d-md-block">
-            <h5 class="card-title">カードのタイトル</h5>
-            <p class="card-text">
-              /url 以下のテキストを追加のコンテンツへの自然な導入としてサポート。カードのコンテンツ
-              カードのコンテンツ
-            </p>
-            <a href="#" class="btn btn-primary">ボタン</a>
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
           </div>
         </div>
       </div>
-      <div class="item-row-col col-4">
+      <div class="item-row-col col-sm-3 col-4">
         <div class="card">
           <div class="square">
             <img src="@/assets/img/img01.jpg" class="card-img-top" />
           </div>
           <div class="card-body d-none d-md-block">
-            <h5 class="card-title">カードのタイトル</h5>
-            <p class="card-text">
-              /url 以下のテキストを追加のコンテンツへの自然な導入としてサポート。カードのコンテンツ
-              カードのコンテンツ
-            </p>
-            <a href="#" class="btn btn-primary">ボタン</a>
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
           </div>
         </div>
       </div>
-      <div class="item-row-col col-4">
+      <div class="item-row-col col-sm-3 col-4">
         <div class="card">
           <div class="square">
             <img src="@/assets/img/img01.jpg" class="card-img-top" />
           </div>
           <div class="card-body d-none d-md-block">
-            <h5 class="card-title">カードのタイトル</h5>
-            <p class="card-text">
-              /url 以下のテキストを追加のコンテンツへの自然な導入としてサポート。カードのコンテンツ
-              カードのコンテンツ
-            </p>
-            <a href="#" class="btn btn-primary">ボタン</a>
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row mt-3 mb-3">
-      <div class="item-row-col col-4">
+      <div class="item-row-col item-row-col col-sm-3 col-4">
         <div class="card">
           <div class="square">
             <img src="@/assets/img/img01.jpg" class="card-img-top" />
           </div>
           <div class="card-body d-none d-md-block">
-            <h5 class="card-title">カードのタイトル</h5>
-            <p class="card-text">
-              /url 以下のテキストを追加のコンテンツへの自然な導入としてサポート。カードのコンテンツ
-              カードのコンテンツ
-            </p>
-            <a href="#" class="btn btn-primary">ボタン</a>
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
           </div>
         </div>
       </div>
-      <div class="item-row-col col-4">
+      <div class="item-row-col col-sm-3 col-4">
         <div class="card">
           <div class="square">
             <img src="@/assets/img/img01.jpg" class="card-img-top" />
           </div>
           <div class="card-body d-none d-md-block">
-            <h5 class="card-title">カードのタイトル</h5>
-            <p class="card-text">
-              /url 以下のテキストを追加のコンテンツへの自然な導入としてサポート。カードのコンテンツ
-              カードのコンテンツ
-            </p>
-            <a href="#" class="btn btn-primary">ボタン</a>
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
           </div>
         </div>
       </div>
-      <div class="item-row-col col-4">
+      <div class="item-row-col col-sm-3 col-4">
         <div class="card">
           <div class="square">
             <img src="@/assets/img/img01.jpg" class="card-img-top" />
           </div>
           <div class="card-body d-none d-md-block">
-            <h5 class="card-title">カードのタイトル</h5>
-            <p class="card-text">
-              /url 以下のテキストを追加のコンテンツへの自然な導入としてサポート。カードのコンテンツ
-              カードのコンテンツ
-            </p>
-            <a href="#" class="btn btn-primary">ボタン</a>
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
+          </div>
+        </div>
+      </div>
+      <div class="item-row-col col-sm-3 col-4">
+        <div class="card">
+          <div class="square">
+            <img src="@/assets/img/img01.jpg" class="card-img-top" />
+          </div>
+          <div class="card-body d-none d-md-block">
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
+          </div>
+        </div>
+      </div>
+      <div class="item-row-col col-sm-3 col-4">
+        <div class="card">
+          <div class="square">
+            <img src="@/assets/img/img01.jpg" class="card-img-top" />
+          </div>
+          <div class="card-body d-none d-md-block">
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
+          </div>
+        </div>
+      </div>
+      <div class="item-row-col col-sm-3 col-4">
+        <div class="card">
+          <div class="square">
+            <img src="@/assets/img/img01.jpg" class="card-img-top" />
+          </div>
+          <div class="card-body d-none d-md-block">
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
+          </div>
+        </div>
+      </div>
+      <div class="item-row-col col-sm-3 col-4">
+        <div class="card">
+          <div class="square">
+            <img src="@/assets/img/img01.jpg" class="card-img-top" />
+          </div>
+          <div class="card-body d-none d-md-block">
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
+          </div>
+        </div>
+      </div>
+      <div class="item-row-col col-sm-3 col-4">
+        <div class="card">
+          <div class="square">
+            <img src="@/assets/img/img01.jpg" class="card-img-top" />
+          </div>
+          <div class="card-body d-none d-md-block">
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
+          </div>
+        </div>
+      </div>
+      <div class="item-row-col col-sm-3 col-4">
+        <div class="card">
+          <div class="square">
+            <img src="@/assets/img/img01.jpg" class="card-img-top" />
+          </div>
+          <div class="card-body d-none d-md-block">
+            <p class="card-title">ブレスオブザワイルド wiiU</p>
+            <p class="card-text">29,800円</p>
           </div>
         </div>
       </div>
@@ -118,8 +158,7 @@ export default {
 }
 
 .item-row-col {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-bottom: 2rem;
 }
 
 h3 {
