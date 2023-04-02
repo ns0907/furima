@@ -34,12 +34,9 @@ export default function () {
     let message;
     await axios
       .post(process.env.VUE_APP_API_URL + '/logout')
-      .then((response) => {
+      .then(() => {
         store.setLogin(0, '');
-        message = response.data;
-      })
-      .catch((error) => {
-        message = error.response.data;
+        message = '';
       });
     return message;
   };

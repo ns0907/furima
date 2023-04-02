@@ -26,6 +26,9 @@
               >
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/">ホーム</a>
+            </li>
+            <li class="nav-item">
               <a
                 class="nav-link"
                 href="#"
@@ -34,9 +37,7 @@
                 v-if="!store.isLogin"
                 >ログイン</a
               >
-              <a class="nav-link" href="#" @click="logout()" v-else
-                >ログアウト</a
-              >
+              <a class="nav-link" href="#" @click="logout()" v-else>ログアウト</a>
             </li>
             <li class="nav-item">
               <a
@@ -47,7 +48,7 @@
                 v-if="!store.isLogin"
                 >会員登録</a
               >
-              <a class="nav-link" href="mypage" v-else>マイページ</a>
+              <a class="nav-link" href="/mypage" v-else>マイページ</a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a
@@ -90,7 +91,7 @@ export default {
   components: { LoginModal, RegistModal },
   setup() {
     const store = loginStore();
-    const {logout} = LoginHelper();
+    const { logout } = LoginHelper();
     return { store, logout };
   },
 };

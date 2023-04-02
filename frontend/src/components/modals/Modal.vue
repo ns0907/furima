@@ -17,7 +17,7 @@
           </button>
         </div>
         <div class="modal-body">
-          {{message}}
+          {{ message }}
           <p>メールアドレス：<input type="text" class="form-control" v-model="email" /></p>
           <p>パスワード：<input type="text" class="form-control" v-model="password" /></p>
         </div>
@@ -35,13 +35,13 @@
 import { ref } from 'vue';
 import LoginHelper from '@/functions/LoginHelper';
 import RegistHelper from '@/functions/RegistHelper';
+import { loginStore } from '@/stores/loginStore';
 // import axios from 'axios';
 export default {
   name: 'ModalComponent',
   props: { modalId: { type: String }, title: { type: String } },
   setup(props) {
     // data
-    const showContent = ref(false);
     const propModalId = ref(props.modalId);
     const propTitle = ref(props.title);
     const email = ref();
@@ -51,36 +51,50 @@ export default {
     // methods
     const { login } = LoginHelper();
     const { regist } = RegistHelper();
+    const store = loginStore();
 
-    const openModal = () => {
-      showContent.value = true;
-    };
-    const closeModal = () => {
-      showContent.value = false;
-    };
     const buttonClickModal = async () => {
-      switch(propModalId.value) {
+      switch (propModalId.value) {
         case 'loginModal': {
           const m = await login(email.value, password.value);
-          
           message.value = m.message;
-          console.log('message.ref:'+ m.message);
+          if (store.isLogin) {
+            message.value = '';
+            document.getElementsByClassName('modal-open')[0].classList.remove('modal-open');
+            document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
+            document.getElementById('loginModal').classList.remove('show');
+            document.getElementById('loginModal').style.display = 'none';
+          }
           break;
         }
         case 'registModal': {
           const m = await regist(email.value, password.value);
           message.value = m.message;
-          console.log('message.ref:'+ m.message);
+          console.log('message.ref:' + m.message);
           break;
         }
       }
+    };
+
+    const messageReset = () => {
+      message.value = '';
     };
 
     // computed
 
     // lifecycle hooks
 
-    return { showContent, openModal, closeModal, email, password, propModalId, propTitle, login, regist, buttonClickModal, message };
+    return {
+      email,
+      password,
+      propModalId,
+      propTitle,
+      login,
+      regist,
+      buttonClickModal,
+      message,
+      messageReset,
+    };
   },
 };
 </script>
