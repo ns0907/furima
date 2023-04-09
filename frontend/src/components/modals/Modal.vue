@@ -100,7 +100,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/common/scss/_common.scss';
+@import '@/assets/common/scss/common.scss';
 
 #overlay {
   /* 要素を重ねた時の順番 */

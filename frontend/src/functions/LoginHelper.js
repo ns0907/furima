@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { loginStore } from '@/stores/loginStore';
+import { useRouter } from 'vue-router';
 
 export default function () {
   const store = loginStore();
+  const router = useRouter();
 
   const login = async (email, password) => {
     let message;
@@ -31,14 +33,17 @@ export default function () {
   };
 
   const logout = async () => {
-    let message;
+    let result;
     await axios
       .post(process.env.VUE_APP_API_URL + '/logout')
-      .then(() => {
+      .then((response) => {
         store.setLogin(0, '');
-        message = '';
+        result = response.data;
       });
-    return message;
+
+    if (result === true) {
+      router.push('/');
+    }
   };
 
   return { login, logout };

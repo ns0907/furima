@@ -98,7 +98,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/common/scss/_common.scss';
+@import '@/assets/common/scss/common.scss';
 #header {
   border-bottom: 2px solid lightgray;
 
