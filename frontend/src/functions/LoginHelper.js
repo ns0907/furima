@@ -18,7 +18,7 @@ export default function () {
           })
           .then((response) => {
             if (response.data.result) {
-              store.setLogin(response.data.result, email);
+              store.setLogin(response.data.result, response.data.token);
             }
             message = response.data;
           })
@@ -34,11 +34,22 @@ export default function () {
 
   const logout = async () => {
     let result;
+
+    axios.defaults.headers.common['Authorization'] = `Bearer ${store.token}`;
+
     await axios
       .post(process.env.VUE_APP_API_URL + '/logout')
       .then((response) => {
+        console.log(response);
         store.setLogin(0, '');
         result = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+        if (error.response.status === 401) {
+          store.setLogin(0, '');
+          router.push('/');
+        }
       });
 
     if (result === true) {

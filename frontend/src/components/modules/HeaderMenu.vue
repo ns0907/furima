@@ -82,6 +82,7 @@
 </template>
 
 <script>
+import { onMounted } from 'vue';
 import LoginModal from '@/components/modals/LoginModal';
 import RegistModal from '@/components/modals/RegistModal';
 import { loginStore } from '@/stores/loginStore';
@@ -92,6 +93,14 @@ export default {
   setup() {
     const store = loginStore();
     const { logout } = LoginHelper();
+    
+    onMounted(() => {
+      const tokenMeta = document.createElement('meta');
+      tokenMeta.name = 'csrf-token';
+      tokenMeta.content = '{{ csrf_token() }}';
+      document.head.appendChild(tokenMeta);
+    });
+
     return { store, logout };
   },
 };

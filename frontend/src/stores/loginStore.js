@@ -5,17 +5,17 @@ export const loginStore = defineStore(
   'login',
   () => {
     const isLogin = ref(0);
-    const email = ref();
+    const token = ref();
 
-    const setLogin = (result, e) => {
+    const setLogin = (result, t) => {
       isLogin.value = result;
-      email.value = e;
+      token.value = t;
     };
 
     return {
       isLogin,
       setLogin,
-      email,
+      token,
     };
   },
   {

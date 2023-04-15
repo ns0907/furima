@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -21,10 +23,11 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            // $request->session()->regenerate();
+            $user = Auth::user();
+            $token = $user->createToken('auth_token')->plainTextToken;
+            Log::info('Generated token: ' . $token);
 
-            // return redirect()->intended('dashboard');
-            return ['result'=> 1, "message"=> "ログインしました。"];
+            return ['result' => 1, 'message' => 'ログインしました。', 'token' => $token];
         } else {
             return [
                 'result'=> 0, 
@@ -33,10 +36,6 @@ class LoginController extends Controller
                 ]
             ];
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do n ot match our records.',
-        ])->onlyInput('email');
     }
 
     /**
@@ -46,7 +45,13 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        Auth::logout();
-        return response()->json(true);
+        $user = Auth::user();
+
+        if ($user) {
+            $user->tokens()->where('name', 'auth_token')->delete();
+            return response()->json(true);
+        } else {
+            return response()->json(false);
+        }
     }
 }

@@ -42,4 +42,15 @@ class UserController extends Controller
             'email' => 'The provided credentials do n ot match our records.',
         ])->onlyInput('email');
     }
+
+    /**
+     * プロフィール
+     *
+     * @param  
+     * @return \Illuminate\Http\Response
+     */
+    public function profile()
+    {
+        return 1;
+    }
 }
