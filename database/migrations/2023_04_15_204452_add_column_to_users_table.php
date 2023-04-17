@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nickname')->after('password');  // ニックネーム
             $table->string('introduction')->after('nickname');  // 自己紹介
             $table->string('post_code')->after('introduction');  // 都道府県
-            $table->string('pref')->after('post__code');  // 郵便番号
+            $table->string('pref')->after('post_code');  // 郵便番号
             $table->string('address')->after('pref');  // 住所
             $table->string('phone')->after('address');  // 電話番号
             $table->softDeletes();  // ソフトデリート
