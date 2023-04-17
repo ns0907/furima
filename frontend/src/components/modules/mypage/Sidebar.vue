@@ -3,22 +3,28 @@
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="/mypage/profile/"> プロフィール </a>
+          <a class="nav-link active" href="/mypage/user/profile/"> プロフィール </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/mypage/goodlists/"> いいねした商品 </a>
+          <a class="nav-link active" href="#"> メールアドレス・パスワード（comming soon） </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#"> 閲覧履歴 </a>
+          <a class="nav-link active" href="#"> 住所（comming soon） </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#"> 出品した商品 </a>
+          <a class="nav-link active" href="/mypage/goodlists/"> いいねした商品（comming soon）</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#"> 購入した商品 </a>
+          <a class="nav-link active" href="#"> 閲覧履歴（comming soon）</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#"> 下書き一覧 </a>
+          <a class="nav-link active" href="#"> 出品した商品（comming soon）</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#"> 購入した商品（comming soon）</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#"> 下書き一覧（comming soon）</a>
         </li>
       </ul>
     </div>

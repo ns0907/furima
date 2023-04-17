@@ -21,5 +21,6 @@ Route::post('/user/regist', [UserController::class, 'regist']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout']);
+    Route::get('/user/profile', [UserController::class, 'edit']);
+    Route::patch('/user/profile', [UserController::class, 'update']);
 });
-
