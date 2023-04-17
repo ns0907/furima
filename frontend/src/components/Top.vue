@@ -1,5 +1,6 @@
 <template>
   <div class="item container-xl">
+  現在は、ログイン・ログアウト・会員登録・マイページからプロフィール更新の機能のみ試せます。
     <div class="item-row row mt-3 mb-3">
       <div class="item-row-col col-sm-3 col-4">
         <div class="card">
