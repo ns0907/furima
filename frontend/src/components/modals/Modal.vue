@@ -82,7 +82,13 @@ export default {
 
     // computed
 
-    // lifecycle hooks
+    // create
+    switch (propModalId.value) {
+      case 'loginModal': {
+        email.value = "test1@test";
+        password.value = "test";
+      }
+    }
 
     return {
       email,
